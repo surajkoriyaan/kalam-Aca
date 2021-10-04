@@ -1,0 +1,41 @@
+<html>
+
+<head>
+
+<script src="jquery.js"></script>
+
+</head>
+<body>
+
+<form>
+<input type="text" id="t1">
+<input type="text" id="t2">
+<input type="button" onclick="fun()" value="submit">
+<p id="abc"></p>
+
+<script>
+function fun(){
+a=$("#t1").val();
+b=$("#t2").val();
+ console.log(0);
+				$.ajax({
+					type:'POST',
+					url:'home_action.php',
+					data:{a:a,b:b},
+              success: function(data)
+                   {
+                     console.log(data);
+                  $("#abc").html(data);
+                   }
+				});
+			}
+
+</script>
+
+
+
+</body>
+
+
+
+</html>
